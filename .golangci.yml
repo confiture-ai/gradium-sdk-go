@@ -1,0 +1,46 @@
+version: "2"
+
+linters:
+  enable:
+    - errcheck
+    - errorlint
+    - exhaustive
+    - goconst
+    - govet
+    - ineffassign
+    - misspell
+    - nilerr
+    - nolintlint
+    - promlinter
+    - revive
+    - staticcheck
+    - unconvert
+    - unparam
+    - unused
+  exclusions:
+    rules:
+      # Exclude errcheck, goconst, errorlint in test files
+      - path: _test\.go
+        linters:
+          - errcheck
+          - goconst
+          - errorlint
+
+  settings:
+    exhaustive:
+      default-signifies-exhaustive: true
+    revive:
+      rules:
+        - name: var-naming
+          disabled: true
+    goconst:
+      min-occurrences: 2
+
+formatters:
+  enable:
+    - gofumpt
+  settings:
+    gofumpt:
+      module-path: github.com/confiture-ai/gradium-sdk-go
+      extra-rules: true
+

@@ -1,0 +1,17 @@
+# Go
+
+# Output of go coverage tool
+*.out
+
+# Environment
+.env*
+!.env.sample
+
+# Test output
+coverage.out
+
+# macOS-specific files
+.vscode/
+.DS_Store
+
+
